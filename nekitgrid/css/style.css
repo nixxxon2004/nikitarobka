@@ -1,0 +1,99 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    text-transform: uppercase;
+    
+}
+
+.container {
+   display: grid;
+   justify-content: center;
+   color: darkgray;
+   grid-template-columns: repeat(3, 1fr);
+   grid-template-rows: 100px 600px 200px 200px 150px;
+   grid-template-areas: 
+   "head cont cont cont cont "
+   "sign sign sign sign sign "
+   "feat1 pust   feat3 feat3 feat3"
+   "feat1 pust   feat2 feat2  feat2"
+   "ban ban ban ban ban "
+   ;
+}
+
+.container > * {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+}
+
+
+.header{
+    background-color: rgb(143, 25, 74);
+    grid-area: head;
+}
+
+.content{
+
+    background-color: rgb(119, 228, 173);
+    grid-area: cont;
+}
+
+.sign-up{
+    background-color: rgb(161, 96, 161);
+    grid-area: sign;
+}
+
+.feature-one{
+    background-color: bisque;
+    grid-area: feat1;
+}
+
+.feature-two {
+    background-color: coral;
+    grid-area: feat2;
+}
+
+.feature-three {
+    background-color: darkcyan;
+    grid-area: feat3;
+}
+.banner {
+    background-color: rgb(107, 228, 107);
+    grid-area: ban;
+}
+.pusto{
+    background-color: rgb(255, 255, 255);
+    grid-area: pust;
+}
+
+@media (max-width: 550px){
+      .container{
+          grid-template-columns:auto;
+          grid-template-rows: 100px 400px 300px 200px 250px;
+          grid-template-areas:
+          "head head head"
+          "sign sign sign"
+          "cont feat1 feat1"
+          "cont ban ban"
+          "cont feat2 feat3"
+          ;
+          
+      }
+}
+   
+@media (max-width:768px) {
+    .container {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows:300px 600px 250px 250px ;
+        grid-template-areas:
+        "head head"
+        "cont cont"
+        "sign feat1"
+        "feat2 feat3"
+        ;
+    }
+}
